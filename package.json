@@ -1,0 +1,26 @@
+{
+  "name": "first-node-express-api",
+  "version": "1.0.0",
+  "description": "Part of Praveen's YouTube Live Stream.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praveenscience/First-Node-Express-API.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "ExpressJS",
+    "API",
+    "REST"
+  ],
+  "author": "Praveen Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/praveenscience/First-Node-Express-API/issues"
+  },
+  "homepage": "https://github.com/praveenscience/First-Node-Express-API#readme"
+}
