@@ -35,5 +35,14 @@ app.put("/:ToDoId", express.json(), (req, res) => {
     res.status(404).json("ToDo Item Not Found!");
   }
 });
+app.delete("/:ToDoId", (req, res) => {
+  const { ToDoId } = req.params;
+  if (ToDos[+ToDoId]) {
+    ToDos[+ToDoId] = null;
+    res.status(204).json("");
+  } else {
+    res.status(404).json("ToDo Item Not Found!");
+  }
+});
 
 module.exports = app;
