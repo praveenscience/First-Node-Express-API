@@ -17,7 +17,7 @@ app.get("/:ToDoId", (req, res) => {
 app.post("/", express.json(), (req, res) => {
   if (typeof req.body.text !== "undefined") {
     ToDos.push(req.body.text);
-    res.json(ToDos.length - 1);
+    res.status(201).json(ToDos.length - 1);
   } else {
     res.status(400).json("You have to enter text.");
   }
@@ -27,7 +27,7 @@ app.put("/:ToDoId", express.json(), (req, res) => {
   if (ToDos[+ToDoId]) {
     if (typeof req.body.text !== "undefined") {
       ToDos[+ToDoId] = req.body.text;
-      res.json(ToDos[+ToDoId]);
+      res.status(202).json(ToDos[+ToDoId]);
     } else {
       res.status(400).json("You have to enter text.");
     }
