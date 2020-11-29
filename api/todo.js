@@ -6,6 +6,14 @@ let ToDos = [];
 app.get("/", (req, res) => {
   res.json(ToDos);
 });
+app.get("/:ToDoId", (req, res) => {
+  const { ToDoId } = req.params;
+  if (ToDos[+ToDoId]) {
+    res.json(ToDos[+ToDoId]);
+  } else {
+    res.status(404).json("ToDo Item Not Found!");
+  }
+});
 app.post("/", express.json(), (req, res) => {
   if (typeof req.body.text !== "undefined") {
     ToDos.push(req.body.text);
