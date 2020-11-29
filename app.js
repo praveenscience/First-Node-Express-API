@@ -3,10 +3,14 @@ const morgan = require("morgan");
 const app = express();
 const port = 3000;
 
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 
 app.get("/", (req, res) => {
-  res.json("Welcome to API Server!");
+  let resp = "Welcome to API Server!";
+  if (req.headers["user-agent"].toLowerCase().indexOf("postman") > -1) {
+    resp = "Hello developer!";
+  }
+  res.json(resp);
 });
 
 app.listen(port, () => {
