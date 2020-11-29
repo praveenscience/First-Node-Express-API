@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express.Router();
 
+let ToDos = [];
+
 app.get("/", (req, res) => {
-  res.json("This is in /api/todo");
+  res.json(ToDos);
 });
 
 module.exports = app;
