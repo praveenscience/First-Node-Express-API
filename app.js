@@ -3,9 +3,12 @@ const morgan = require("morgan");
 const CORS = require("./cors");
 const app = express();
 const port = 3000;
+const api = require("./api/root");
 
 app.use(morgan("combined"));
 app.use(CORS);
+
+app.use("/api", api);
 
 app.get("/", (req, res) => {
   let resp = "Welcome to API Server!";
